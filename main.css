@@ -1,0 +1,109 @@
+body {
+  font-family: Verdana, Helvetica, sans-serif;
+  background-color: #DDDDDD;
+}
+
+p {
+	text-align: justify;
+	font-size: 9pt;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+}
+
+.beta {
+	font-size: 9pt;
+	float: left;
+}
+
+.columnHeader {
+	font-size: 10pt;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.columnEntry {
+	font-size: 9pt;
+	padding: 5px;
+	text-align: center;
+}
+
+.columnNote {
+	font-size: 7pt;
+	padding: 5px;
+	text-align: center;
+}
+
+.nav {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color:#eee;
+}
+
+.navItem {
+	float: left;
+	padding: 5px;
+	font-size: 9pt;
+}
+
+.wrapper {
+	margin: 0px auto;
+	width: 500px;
+}
+
+.skinnyWrapper {
+	margin: 0px auto;
+	width: 250px;
+}
+
+.column {
+	float: left;
+	width:250px;
+	background-color:#eee;
+}
+
+.columnFat {
+	float: left;
+	width:500px;
+	padding-bottom: 15px;
+	background-color:#eee;
+}
+
+a:link {
+	color: #444444;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #444444;
+	text-decoration: none;
+}
+
+a:active {
+	color: #FFFFFF;
+}
+
+a:hover {
+	color: #444444;
+	text-decoration: underline;
+}
+
+table {
+	margin:0px auto;
+}
+
+tr {
+	text-align: center;
+}
+
+th {
+	text-align: center;
+}
+
+h1 {
+	font-size: 12pt;
+	text-decoration: none;
+	color: #000000;
+}

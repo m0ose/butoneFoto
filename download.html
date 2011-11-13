@@ -1,0 +1,33 @@
+{% extends "base2column.html" %}
+
+{% block leftcolumn %}
+<table>
+	<tr>
+		<th>Installation</th>
+	</tr>
+	<tr>
+		<td><p>
+		ButOneApp is actually an AppWidget. After you install it via the link to the right, long-click your homescreen, select widgets, and select ButOne.
+		</p></td>
+	</tr>
+	<tr>
+		<th>Use</th>
+	</tr>
+	<tr>
+		<td><p>
+		To configure ButOneApp, click the settings button on the left of the widget. In the dialog that opens, you can add tags or click on a tag to link it to your ButOne widget. To change the color of a tag, long-click it in the list. To change your username, press the settings button on your phone while in this ButOne tag dialog. You can also have multiple instances of the ButOne widget open in case you want to tag different things without going into your ButOne settings every time.
+		</p></td>
+	</tr>
+</table>
+{% endblock %}
+{% block rightcolumn %}
+<table>
+		<tr>
+			<th>Download</th>
+		</tr>
+	</table>
+	<div style="text-align:center">
+		<img src="http://qrcode.kaywa.com/img.php?s=6&d=https%3A%2F%2Fbutoneextended.appspot.com%2Fdownloads%2FbutoneExtended.apk" alt="qrcode"  />
+	</div>
+	<div class="columnEntry"><a href="/downloads/butoneExtended.apk">Download ButOneApp (alpha 1.1)</a></div>
+{% endblock %}

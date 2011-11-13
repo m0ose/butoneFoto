@@ -1,0 +1,29 @@
+{% extends "base2column.html" %}
+
+{% block leftcolumn %}
+   <table>
+	  <tr>
+	  	<th>Tags</th>
+	  </tr>
+	  {% for tag in tags %}
+	  <tr>
+	  	<td><a href="/browse/tag/{{ tag|escape }}">{{ tag }}</a></td>
+	  </tr>
+	  {% endfor %}
+  </table>
+{% endblock %}
+
+{% block rightcolumn %}
+  <table>
+	  <tr>
+	  	<th>Users</th>
+	  </tr>
+	  {% for user in users %}
+	  <tr>
+	  	<td><a href="/browse/user/{{ user|escape }}">{{ user }}</a></td>
+	  </tr>
+	  {% endfor %}
+  </table>
+{% endblock %}
+
+  

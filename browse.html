@@ -1,0 +1,55 @@
+{% extends "base1fatcolumn.html" %}
+
+{% block column %}
+		<div class="columnHeader">
+	 		<h1>{{ dataType }}s of the {{ filterName }}: {{ filterValue }}
+	 		{% ifequal dataType "tag" %}
+	 		(<a href="http://maps.google.com?q=http://butoneextended.appspot.com/kml/{{ filterValue|replacestring:" ,_" }}/">map</a>
+	 		<a href="/kml/{{ filterValue|replacestring:" ,_" }}/">kml</a>)</h1>
+	 		{% endifequal %}
+	 		{% ifequal dataType "user" %}
+	 		(<a href="http://maps.google.com?q=http://butoneextended.appspot.com/kml/null/{{ filterValue|replacestring:" ,_" }}">map</a>
+	 		<a href="/kml/null/{{ filterValue|replacestring:" ,_" }}">kml</a>)</h1>
+	 		{% endifequal %}
+	 	</div>
+		{% for geotag_list in displayData %}
+			{% for geotag in geotag_list %}
+				{% ifequal dataType "user" %}
+					{% ifchanged %}
+					<div class="columnHeader">
+						<b><a href="/browse/user/{{ geotag.user }}">{{ geotag.user }}</a></b>
+						(<a href="http://maps.google.com?q=http://butoneextended.appspot.com/kml/{{ geotag.user|replacestring:" ,_" }}/{{ geotag.tag|replacestring:" ,_" }}">map</a>
+						<a href="/kml/{{ geotag.user|replacestring:" ,_" }}/{{ geotag.tag|replacestring:" ,_" }}">kml</a>) at
+					</div>
+					{% endifchanged %}
+				{% endifequal %}
+				{% ifequal dataType "tag" %}
+					{% ifchanged %}
+					<div class="columnHeader">
+						<b><a href="/browse/tag/{{ geotag.tag }}">{{ geotag.tag }}</a></b>
+						(<a href="http://maps.google.com?q=http://butoneextended.appspot.com/kml/{{ geotag.user|replacestring:" ,_" }}/{{ geotag.tag|replacestring:" ,_" }}">map</a>
+						<a href="/kml/{{ geotag.user|replacestring:" ,_" }}/{{ geotag.tag|replacestring:" ,_" }}">kml</a>) at	
+					</div>
+					{% endifchanged %}
+				{% endifequal %}
+				<div class="columnEntry">
+					{{ forloop.counter }})
+					time: <b>{{ geotag.date|escape|slicestring:"5,10" }} {{ geotag.date|escape|slicestring:"11,16" }}</b>
+					<a href="http://maps.google.com?q={{ geotag.lat }},{{ geotag.lon }}+({{ geotag.tag }})">
+					lat: <b>{{ geotag.lat }}</b>
+					lon: <b>{{ geotag.lon }}</b>
+					</a>
+				{% if geotag.imgUrl %}
+					<br>
+					image: <b> <a href='{{ geotag.imgUrl}}'> {{ geotag.imgUrl}} </a></b>
+				{% else %}
+					<br>
+					No Image
+				{% endif %}
+				
+
+				</div>
+				
+			{% endfor %}  
+		{% endfor %}
+{% endblock %}

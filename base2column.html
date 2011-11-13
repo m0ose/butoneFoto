@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+  {% block header %}
+  <a href="/" style="text-decoration:none; color:#000000;"><h1 style="letter-spacing: 5px; text-align:center; margin: 10 auto;">ButtOne Extended</h1></a>
+  {% endblock %}
+  <div class="wrapper">
+	  <div class="column">
+	  {% block leftcolumn %}
+		{% endblock %}
+	  </div>
+	  <div class="column">
+	  {% block rightcolumn %}
+		  {% endblock %}
+	  </div>
+	
+	
+  </div>
+  {% block nav %}
+  <div class="nav">
+  	<div class="navItem">
+  		<a href="/">Home</a>
+  	</div>
+  	<div class="navItem">
+  		<a href="/about">About</a>
+  	</div>
+  	<div class="navItem">
+  		<a href="/download">Download</a> <i>(alpha)</i>
+  	</div>
+  </div>
+  {% endblock %}
+  </body>
+</html>
