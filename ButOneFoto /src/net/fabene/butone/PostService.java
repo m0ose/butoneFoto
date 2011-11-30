@@ -167,7 +167,7 @@ public class PostService extends Service {
 					lastLat = 0.0f;
 					lastLon = 0.0f;
 				}
-				Toast.makeText(getApplicationContext(), "Couldn't get a GPS fix. Posting from "+lastLat+","+ lastLon+ " instead.", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), " Posting from last location "+lastLat+","+ lastLon+ ".", Toast.LENGTH_SHORT).show();
 
 				mHandler.removeCallbacks(quitTrying);
 				

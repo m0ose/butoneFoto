@@ -194,7 +194,6 @@ def testUser():
 	
 def main():
     run_wsgi_app(application)
-    testUser()
 
 if __name__ == "__main__":
     main()
